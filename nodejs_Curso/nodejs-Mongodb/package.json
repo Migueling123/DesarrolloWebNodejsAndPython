@@ -1,0 +1,30 @@
+{
+  "name": "nodejs-mongodb",
+  "version": "1.0.0",
+  "description": "curso de mongo db",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Miguelito",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "bootstrap": "^4.4.1",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "express-validator": "^6.3.0",
+    "jquery": "^3.4.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^5.8.0",
+    "mongose": "0.0.2-security",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "timeago.js": "^4.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.1"
+  }
+}

@@ -1,0 +1,67 @@
+<nav class="navbar navbar-expand-lg  navbar-dark bg-dark">
+    <a class="navbar-brand" href="/">My Notes</a>
+    <h7 class="navbar text-info text-aling" >
+        {{#if user}}
+            Welcome!! {{user.username}}                
+        {{/if}}
+    </h7>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                
+                <li class="nav-item ">
+                    <a class="nav-link" href="/index/contact">Contact <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/index/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/notes">Notes</a>
+                </li>
+                {{!-- 
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    links
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/links">All links</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="/links/Add">Add-Link</a>
+                    </div>
+                </li>
+                 --}}
+            </ul>
+
+            
+            
+            {{!--<form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-auto" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>--}}
+            <ul class="navbar-nav ml-auto">
+                {{#if user}}
+                {{!-- <li class="nav-item">
+                    <a class="nav-link " href="/profile" tabindex="-1" aria-disabled="true">Profile</a>
+                </li> --}}
+                <li class="nav-item">
+                    <a class="nav-link " href="/users/logout" tabindex="-1" aria-disabled="true">Log Out</a>
+                </li>
+                {{else}}
+                <li class="nav-item">
+                    <a class="nav-link " href="/users/signup" tabindex="-1" aria-disabled="true">Sign Up</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link " href="/users/signin" tabindex="-1" aria-disabled="true">Sign In</a>
+                </li>
+                    
+                {{/if}}
+            </ul>
+        </div>
+
+    
+</nav>

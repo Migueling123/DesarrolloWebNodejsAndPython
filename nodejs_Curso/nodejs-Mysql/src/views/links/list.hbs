@@ -1,0 +1,107 @@
+{{!--<div class="row mx-auto">    
+        <table class="table table-bordered table-hover">
+            <thead class="thead-dark">
+                <tr>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Link
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                </tr>
+
+            </thead>
+            <tbody>
+                {{#each lisLinks}}
+                <tr>
+                    <td>
+                        {{title}}
+                    </td>
+                    <td>
+                        <a href="{{url}}" target="_blank">{{url}}</a>
+                    </td>                        
+                    <td>
+                        {{description}}
+                    </td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+           
+</div>--}}
+<div class="row mx-auto">
+    {{#each lisLinks}}
+    <div class="card m-3" style="width:200px;">
+        <div class="card-header">
+            <a href="{{url}}" target="_blank">
+            <h3 class="card-title text-center text-uppercase">
+                {{title}}
+            </h3>
+        </a>
+        </div>        
+        <div class="card-body">
+            <p><h6>Description</h6> {{description}}</p>
+            <p><h6>Create date</h6> {{timeago created_at}}</p>            
+        </div>
+        <div class="card-footer text-center">
+            <div class="btn-group btn-group-sm ">
+                <a href="links/datos/{{id}}" style="" class="btn btn-outline-danger btnBorrar" id="">Delete</a>
+                <a href="links/datos/{{id}}" class="btn btn-outline-success btnActualizar" id="">Edit</a>
+            </div>
+        </div>
+    </div>
+    
+{{!--    {{else}}
+    <div class="col-ms-4 mx-auto text-center">
+        <p>Agregar nuevo link</p>
+        <a href="links/datos/1" style="" class="btn btn-outline-success btnAgregar" id="">Add</a>
+    </div> --}}
+    {{/each}}
+    <div class="col-ms-4 m-3 text-center">
+        <div class="card">
+            <div class="card-header">
+                <h5> <p>Create new card!</p> </h5>
+            </div>
+            <div class="card-body">                
+                <a href="links/datos/1" style="" class="btn btn-outline-success btnAgregar" id="">Add</a>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>    
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form method="POST" id="FormLinks">
+              <input type="text" class="form-control" name="id" hidden value="1">
+              <input type="text" class="form-control" name="userid" hidden value="1">
+              <div class="form-group">
+                  <input type="text" class="form-control" name="title" placeholder="title" autofocus>
+              </div>
+              <div class="form-group">
+                  <input type="url" class="form-control" name="url" placeholder="URL">
+              </div>
+              <div class="form-group">
+                  <textarea name="description" class="form-control" rows="2" placeholder="description"></textarea>
+              </div>                    
+          </form>       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary btnGuardar">Guardar</button>
+      </div>
+    </div>
+  </div>
+</div>
